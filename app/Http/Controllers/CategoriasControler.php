@@ -13,7 +13,7 @@ class CategoriasControler extends Controller
      */
     public function index()
     {
-        return view('supervisor.Categorias.index');
+        return view('CATEGORIAS.categorias');
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoriasControler extends Controller
      */
     public function create()
     {
-        return view('supervisor.Categorias.create');
+        return view('CREAR.create');
     }
 
     /**
@@ -34,7 +34,8 @@ class CategoriasControler extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
     }
 
     /**
@@ -43,48 +44,21 @@ class CategoriasControler extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($categoria)
     {
-        switch ($id) {
-            case '1':
-                $seccion = "electrónica";
-                break;
-            case '2':
-                $seccion = "electrodomesticos";
-                break;
-            case '3':
-                $seccion = "ropa";
-                break;
-            default:
-                return "Error::::";
-                break;
-        }
-        return view('supervisor.Categorias.show',compact('seccion'));
+        return view('MOSTRAR.mostrar', compact('categoria'));
+       // return view ("form_mostrar.mostrar", compact("categorias"));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  char  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($categoria)
     {
-        switch ($id) {
-            case '1':
-                $seccion = "electrónica";
-                break;
-            case '2':
-                $seccion = "electrodomesticos";
-                break;
-            case '3':
-                $seccion = "ropa";
-                break;
-            default:
-                return "Error::::";
-                break;
-        }
-        return view('supervisor.Categorias.edit',compact('seccion'));
+        return view('EDITAR.edit', compact('categoria'));
     }
 
     /**
@@ -96,7 +70,8 @@ class CategoriasControler extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
     }
 
     /**
@@ -110,3 +85,4 @@ class CategoriasControler extends Controller
         //
     }
 }
+
